@@ -5,4 +5,5 @@ datetime
 pandas_datareader
 keras
 tensorflow
+scikit-learn
 streamlit
