@@ -10,7 +10,7 @@ start = '2015-01-01'
 end = date.isoformat(date.today())
 st.title("STOCK PRICE PREDICTION")
 input= st.text_input("enter the stock ticker(ex : for Apple it is AAPL)",'AAPL')
-dataset=pdr.DataReader(input,'yahoo',start,end)
+dataset=pdr.DataReader(input,'google',start,end)
 
 #describing the data
 st.subheader('Data from 2015 - till date')
