@@ -5,13 +5,15 @@ from datetime import date
 import pandas_datareader as pdr
 from keras.models import load_model
 import streamlit as st
+import yfinance as yf
 
 start = '2015-01-01'
 end = date.isoformat(date.today())
 st.title("STOCK PRICE PREDICTION")
 input= st.text_input("enter the stock ticker(ex : for Apple it is AAPL)",'AAPL')
-dataset=pdr.DataReader(input,start,end, data_source='yahoo')
-
+# dataset=pdr.DataReader(input,start,end, data_source='yahoo')
+ticker = yf.Ticker(input)
+dataset = ticker.history(period="max")
 #describing the data
 st.subheader('Data from 2015 - till date')
 st.write(dataset.describe())
